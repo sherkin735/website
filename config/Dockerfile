@@ -10,6 +10,8 @@ WORKDIR /var/app
 
 ADD . /var/app
 
+COPY config/usercustomize.py /usr/local/lib/python3.6/site-packages/
+
 RUN make build
 
 EXPOSE 80
