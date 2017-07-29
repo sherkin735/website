@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  flask:
+    image: williamnorris/personal-site:dev
+    command: make dev
+    build:
+      dockerfile: config/Dockerfile
+      context: .
+    environment:
+      - FLASK_APP=server
+      - PORT=80
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/app
